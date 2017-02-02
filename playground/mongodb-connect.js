@@ -18,16 +18,16 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   //   console.log('Added new record. \n', JSON.stringify(res.ops, undefined, 2));
   // });
 
-  // db.collection('Users').insertOne({
-  //   name: 'Martin Castre',
-  //   age: 29,
-  //   location: 'Birmingham, AL'
-  // }, (err, res) => {
-  //   if (err) {
-  //     return console.log('Unable to add user record.', err);
-  //   }
-  //   console.log('Added new user record. \n', JSON.stringify(res.ops[0]._id.getTimestamp(), undefined, 2));
-  // });
+  db.collection('Users').insertOne({
+    name: 'Jennifer Castre',
+    age: 29,
+    location: 'Birmingham, AL'
+  }, (err, res) => {
+    if (err) {
+      return console.log('Unable to add user record.', err);
+    }
+    console.log('Added new user record. \n', JSON.stringify(res.ops[0]._id.getTimestamp(), undefined, 2));
+  });
 
   db.close();
 });
